@@ -1,0 +1,273 @@
+body {
+    font-family: 'Times New Roman', Times, serif; /* Fonte profissional */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("C:\site portfolio\site portfolio\images\background.webp") no-repeat center center fixed; /* Imagem de fundo */
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 0;
+}
+
+header {
+    position: relative;
+    background-image: url("C:\site portfolio\site portfolio\images\header.jpg"); /* Imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    padding: 0.01rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 1; /* Garante que o header fique acima do fundo */
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7); /* Cor branca com 70% de transparência */
+    z-index: 0;
+}
+
+header .title,
+header nav,
+header .language-switch {
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo fique acima do pseudo-elemento */
+}
+
+header .title {
+    flex-grow: 1;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    margin-right: 11rem;
+}
+
+header .title h1 {
+    margin: 0;
+    font-size: 2rem; /* Aumentar o tamanho do nome */
+}
+
+header .title h2 {
+    margin: 0;
+    font-size: 1.5rem; /* Aumentar o tamanho do nome */
+}
+
+header nav {
+    order: -1; /* Garantir que o menu fique à esquerda */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+header nav ul li a:hover {
+    color: #126019;
+    transition: color 0.3s ease;
+}
+
+header .language-switch {
+    display: flex;
+    align-items: center;
+}
+
+.language-switch button {
+    background: none;
+    border: 2px solid #333; /* Adicionar linhas ao redor dos botões */
+    color: #333;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 5px;
+    padding: 0.5rem; /* Adicionar padding para os botões */
+    border-radius: 50%; /* Deixar os botões redondos */
+    width: 40px; /* Definir largura e altura dos botões para deixá-los redondos */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-switch button:hover {
+    color: #126019;
+    border-color: #126019;
+}
+
+main {
+    padding: 1.5rem;
+    min-height: calc(100vh - 100px); /* Ajusta para ocupar o espaço total */
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo principal fique acima do fundo */
+}
+
+main h2 {
+    color: #333;
+    text-align: center; /* Centralizar o título */
+}
+
+.text-container {
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 0 auto;
+    max-width: 80%;
+    text-align: left; /* Alinhar o texto à esquerda */
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os itens da galeria */
+    gap: 20px; /* Adiciona espaçamento entre os itens */
+}
+
+.gallery-item {
+    background-color: rgba(251, 250, 249, 0.8); /* Bege claro com alta transparência */
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 10px;
+    flex: 0 1 30%; /* Permite que os itens ocupem até 30% da largura disponível */
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color:#333;
+}
+
+footer {
+    text-align: center;
+    padding: 0.5rem 0; /* Diminuir o tamanho do padding */
+    background-color: rgba(251, 250, 249, 0.8); /* Bege com transparência */
+    color: #333;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+form label {
+    display: block;
+    margin-top: 1rem;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+form button {
+    display: block;
+    background-color: #2c6d2d;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #1e4e1e;
+}
+
+section {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hidden { display: none; }
+.active { display: block; }
+
+@media only screen and (max-width: 800px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        background-image: url("C:\site portfolio\site portfolio\images\header.jpg"); /* Imagem de fundo para telas móveis */
+    }
+
+    header .title {
+        order: 1; /* Nome e subtítulo no topo */
+        left: 6rem;
+    }
+
+    header nav {
+        order: 2;
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: row; /* Manter o menu em uma linha */
+        justify-content: center;
+    }
+
+    header .language-switch {
+        order: 3; /* Botões de idioma no final */
+        position: absolute;
+        right: 0.3rem;
+        top: 3.6rem;
+    }
+
+    main .home .text-container {
+        width: 100%;
+        text-align: center;
+        background-color: rgba(251, 250, 249, 0.8); /* Ajuste para fundo com transparência */
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    header {
+        background-image: url("C:\site portfolio\site portfolio\images\header.jpg"); /* Imagem de fundo para telas grandes */
+    }
+
+    main .home .text-container {
+        width: 50%;
+        text-align: left;
+        float: left; /* Alinha à esquerda */
+    }
+}

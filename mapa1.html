@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa 1 - Geoprocessamento</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Evita rolagem horizontal */
+        }
+        iframe {
+            width: 100%;
+            height: auto;
+            border: none;
+        }
+        .map-container {
+            text-align: center;
+            margin: 0 auto;
+        }
+        .map-container img {
+            width: 50%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .map-caption {
+            text-align: left;
+            font-size: 1rem;
+            margin-top: 10px;
+            margin-left: 25%;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-item nav-item-pt"><a href="index.html">Home</a></li>
+                <li class="nav-item nav-item-pt"><a href="portfolio.html">Portfólio</a></li>
+                <li class="nav-item nav-item-pt"><a href="contacts.html">Contato</a></li>
+                <li class="nav-item nav-item-pt"><a href="about.html">Sobre Mim</a></li>
+
+                <li class="nav-item nav-item-en" style="display: none;"><a href="index.html">Home</a></li>
+                <li class="nav-item nav-item-en" style="display: none;"><a href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item nav-item-en" style="display: none;"><a href="contacts.html">Contact</a></li>
+                <li class="nav-item nav-item-en" style="display: none;"><a href="about.html">About Me</a></li>
+            </ul>
+        </nav>        
+        <div class="title">
+            <h1 class="portfolio-title">Nina Maciel Brisolla</h1>
+            <h2 class="subtitle">Geoprocessamento</h2>
+        </div>
+        <div class="language-switch">
+            <button onclick="switchLanguage('pt')">PT</button>
+            <button onclick="switchLanguage('en')">EN</button>
+        </div>
+    </header>
+    <main class="document">
+        <section id="pt" class="content active">
+            <div class="map-container">
+                <img src="C:\site portfolio\site portfolio\images\MAPA1.jpg" alt="Mapa 1: Área de Estudo">
+                <h2 class="map-caption">APA-NRV . Mapa da Área de Estudo do Experimento sobre o efeito da restauração de pastagens na perda de água e de solo na APA das Nascentes do Rio Vermelho (GO)</h2>
+            </div>
+        </section>
+        <section id="en" class="content hidden">
+            <div class="map-container">
+                <img src="C:\site portfolio\site portfolio\images\MAPA1.jpg" alt="Map 1: Study Area">
+                <h2 class="map-caption">APA-NRV . Map of the Study Area for the Experimental Study on the Effect of Pasture Restoration on Water and Soil Loss in the APA Nascentes do Rio Vermelho (GO)</h2>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Nina Maciel Brisolla</p>
+    </footer>
+    <script>
+        function switchLanguage(language) {
+            document.querySelectorAll('.content').forEach(element => {
+                element.classList.add('hidden');
+                element.classList.remove('active');
+            });
+            document.getElementById(language).classList.add('active');
+            document.getElementById(language).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-item').forEach(element => {
+                element.style.display = 'none';
+            });
+            document.querySelectorAll('.nav-item-' + language).forEach(element => {
+                element.style.display = 'inline';
+            });
+
+            if (language === 'pt') {
+                document.querySelector('.subtitle').textContent = 'Geoprocessamento';
+            } else if (language === 'en') {
+                document.querySelector('.subtitle').textContent = 'GIS';
+            }
+        }
+
+        window.onload = function() {
+            switchLanguage('pt');
+        }
+    </script>
+</body>
+</html>

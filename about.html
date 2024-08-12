@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Nina Maciel Brisolla</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function switchLanguage(language) {
+            // Troca o conteúdo da página
+            document.querySelectorAll('.content').forEach(element => {
+                element.classList.add('hidden');
+                element.classList.remove('active');
+            });
+            document.getElementById(language).classList.add('active');
+            document.getElementById(language).classList.remove('hidden');
+
+            // Troca os itens do menu
+            document.querySelectorAll('.nav-item').forEach(element => {
+                element.style.display = 'none';
+            });
+            document.querySelectorAll('.nav-item-' + language).forEach(element => {
+                element.style.display = 'inline';
+            });
+
+            // Troca o subtítulo
+            if (language === 'pt') {
+                document.querySelector('.subtitle').textContent = 'Tradução Científica';
+            } else if (language === 'en') {
+                document.querySelector('.subtitle').textContent = 'Scientific Translation';
+            }
+        }
+
+        window.onload = function() {
+            switchLanguage('pt');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-item nav-item-pt"><a href="index.html">Home</a></li>
+                <li class="nav-item nav-item-pt"><a href="portfolio.html">Portfólio</a></li>
+                <li class="nav-item nav-item-pt"><a href="contacts.html">Contato</a></li>
+        
+                <li class="nav-item nav-item-en" style="display: none;"><a href="index.html">Home</a></li>
+                <li class="nav-item nav-item-en" style="display: none;"><a href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item nav-item-en" style="display: none;"><a href="contacts.html">Contact</a></li>
+            </ul>
+        </nav>                
+        <div class="title">
+            <h1>Nina Maciel Brisolla</h1>
+            <h2 class="subtitle">Tradução Científica</h2>
+        </div>
+        <div class="language-switch">
+            <button onclick="switchLanguage('pt')">PT</button>
+            <button onclick="switchLanguage('en')">EN</button>
+        </div>
+    </header>
+    <main class="portfolio">
+        <section id="pt" class="content active">
+            <div class="text-container">
+                <h2>Sobre Mim</h2>
+                <p>Busco uma posição na área de Engenharia Florestal que me permita aplicar meus conhecimentos e habilidades para contribuir para a conservação e manejo sustentável de ecossistemas.</p>
+
+                <h2>Formação Acadêmica</h2>
+                <ul>
+                    <li>Graduação em Engenharia Florestal na Universidade de Brasília (UnB), previsão de formatura em um ano.</li>
+                    <li>Ensino fundamental e médio: Escola das Nações (12 anos); Marista; School of The Future (NY); COC.</li>
+                </ul>
+
+                <h2>Atividade Acadêmica</h2>
+                <ul>
+                    <li>Monitoria em Introdução à Anatomia Vegetal.</li>
+                    <li>PIBIC com Carlos Henke sobre "Combate químico aos incêndios florestais: desempenho de um retardante de chamas baseado em fósforo e nitrogênio" no projeto "Prometeu DF: Incêndios florestais, combate químico e tomada de decisões".</li>
+                    <li>Colaboração no processo da criação do Plano de Manejo da ARIE Capetinga-Taquara, que engloba a Fazenda Água Limpa (FAL), da UnB, com os Professores Dr. Reuber Brandão e Fabiana Dallacorte.</li>
+                </ul>
+
+                <h2>Formação Complementar</h2>
+                <ul>
+                    <li>Certificado Michigan de proficiência em inglês.</li>
+                    <li>Escuela Mediterráneo, Barcelona - Espanhol intermediário.</li>
+                    <li>ArcGIS Básico e Intermediário pela ECOFLOR.</li>
+                    <li>ArcGIS Avançado, pela FloraGIS em conjunto com a ECOFLOR.</li>
+                    <li>QGIS.</li>
+                    <li>Conhecimentos intermediários de informática: pacote Office 365, Google Drive, Teams.</li>
+                </ul>
+
+                <h2>Cursos Extracurriculares</h2>
+                <ul>
+                    <li>Recuperação de Áreas Degradadas com Rodrigo Studart Corrêa.</li>
+                    <li>Técnicas Construtivas com Bambu, Bruno Piedade Baptista, Sérgio Borges Paim Pamplona.</li>
+                </ul>
+
+                <h2>Voluntariado</h2>
+                <ul>
+                    <li>OSBG (Our School at Blair Grocery), escola e fazenda urbana em Nova Orleans (Louisiana, EUA).</li>
+                    <li>Voluntariado em atividades relacionadas à conservação e manejo de ecossistemas, incluindo manejo de espécie invasora (agave) no Parque Nacional de Brasília e implantação de canteiros de pesquisa com a paisagista Mariana Siqueira do projeto Jardins de Cerrado.</li>
+                    <li>Estágio voluntário na Rede de Sementes do Cerrado, onde atuei no manejo de sementes e vendas na feira.</li>
+                    <li>Gestão do Centro Acadêmico de Engenharia Florestal.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="en" class="content hidden">
+            <div class="text-container">
+                <h2>About Me</h2>
+                <p>I am seeking a position in the field of Forestry Engineering that allows me to apply my knowledge and skills to contribute to the conservation and sustainable management of ecosystems.</p>
+
+                <h2>Academic Background</h2>
+                <ul>
+                    <li>Degree in Forestry Engineering from the University of Brasília (UnB), expected to graduate in one year.</li>
+                    <li>Elementary and high school: School of Nations (12 years); Marista; School of The Future (NY); COC.</li>
+                </ul>
+
+                <h2>Academic Activities</h2>
+                <ul>
+                    <li>Teaching Assistant in Introduction to Plant Anatomy.</li>
+                    <li>PIBIC research with Carlos Henke on "Chemical fire fighting: performance of a phosphorus and nitrogen-based flame retardant" in the project "Prometeu DF: Forest fires, chemical fighting and decision making".</li>
+                    <li>Collaboration in the creation process of the ARIE Capetinga-Taquara Management Plan, which includes the Água Limpa Farm (FAL), from UnB, with Professors Dr. Reuber Brandão and Fabiana Dallacorte.</li>
+                </ul>
+
+                <h2>Additional Training</h2>
+                <ul>
+                    <li>Michigan Certificate of Proficiency in English.</li>
+                    <li>Escuela Mediterráneo, Barcelona - Intermediate Spanish.</li>
+                    <li>Basic and Intermediate ArcGIS by ECOFLOR.</li>
+                    <li>Advanced ArcGIS by FloraGIS in conjunction with ECOFLOR.</li>
+                    <li>QGIS.</li>
+                    <li>Intermediate computer skills: Office 365, Google Drive, Teams.</li>
+                </ul>
+
+                <h2>Extracurricular Courses</h2>
+                <ul>
+                    <li>Rehabilitation of Degraded Areas with Rodrigo Studart Corrêa.</li>
+                    <li>Constructive Techniques with Bamboo, Bruno Piedade Baptista, Sérgio Borges Paim Pamplona.</li>
+                </ul>
+
+                <h2>Volunteering</h2>
+                <ul>
+                    <li>OSBG (Our School at Blair Grocery), school and urban farm in New Orleans (Louisiana, USA).</li>
+                    <li>Volunteering in activities related to ecosystem conservation and management, including management of invasive species (agave) in the Brasília National Park and implementation of research beds with landscape architect Mariana Siqueira from the Cerrado Gardens project.</li>
+                    <li>Volunteer internship at the Cerrado Seed Network, where I worked in seed management and sales at the fair.</li>
+                    <li>Management of the Forestry Engineering Academic Center.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Nina Maciel Brisolla</p>
+    </footer>
+</body>
+</html>

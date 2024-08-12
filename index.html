@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Nina Maciel Brisolla</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .title h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .title h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .language-switch {
+            display: flex;
+            gap: 10px;
+        }
+        .language-switch button {
+            background: none;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .language-switch button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        .content-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+        .text-container {
+            max-width: 47%;
+            text-align: left;
+            padding: 20px;
+            margin-left: 25%;
+            position: relative;
+        }
+        .text-container h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .text-container p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .image-container.left {
+            position: absolute;
+            width: 35%;
+            padding: 0px;
+        }
+        .image-container.right {
+            position: absolute;
+            width: 25%;
+        }
+        .image-container.left {
+            left: 0;
+        }
+        .image-container.right {
+            right: 0;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f4f4f4;
+            margin-top: auto; /* Garante que o footer fique no final da página */
+        }
+        ul {
+            padding-left: 20px;
+            text-align: left;
+            list-style-type: disc;
+        }
+        .services-title {
+            text-align: left;
+        }
+    </style>
+    <script>
+        function switchLanguage(language) {
+            // Troca o conteúdo da página
+            document.querySelectorAll('.content').forEach(element => {
+                element.classList.add('hidden');
+                element.classList.remove('active');
+            });
+            document.getElementById(language).classList.add('active');
+            document.getElementById(language).classList.remove('hidden');
+
+            // Troca os itens do menu
+            document.querySelectorAll('.nav-item').forEach(element => {
+                element.style.display = 'none';
+            });
+            document.querySelectorAll('.nav-item-' + language).forEach(element => {
+                element.style.display = 'inline';
+            });
+
+            // Troca o subtítulo
+            if (language === 'pt') {
+                document.querySelector('.subtitle').textContent = 'Tradução Científica';
+            } else if (language === 'en') {
+                document.querySelector('.subtitle').textContent = 'Scientific Translation';
+            }
+        }
+
+        window.onload = function() {
+            switchLanguage('pt');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>Nina Maciel Brisolla</h1>
+            <h2 class="subtitle">Tradução Científica</h2>
+        </div>
+        <nav>
+            <ul>
+                <li class="nav-item nav-item-pt"><a href="about.html">Sobre Mim</a></li>
+                <li class="nav-item nav-item-pt"><a href="portfolio.html">Portfólio</a></li>
+                <li class="nav-item nav-item-pt"><a href="contacts.html">Contato</a></li>
+
+                <li class="nav-item nav-item-en" style="display: none;"><a href="about.html">About Me</a></li>
+                <li class="nav-item nav-item-en" style="display: none;"><a href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item nav-item-en" style="display: none;"><a href="contacts.html">Contact</a></li>
+            </ul>
+        </nav>                
+        <div class="language-switch">
+            <button onclick="switchLanguage('pt')">PT</button>
+            <button onclick="switchLanguage('en')">EN</button>
+        </div>
+    </header>
+    <main class="home">
+        <section id="pt" class="content active">
+            <div class="content-container">
+                <div class="image-container left">
+                    <img src="C:\site portfolio\site portfolio\images\foto 1.png" alt="Trabalho em campo com drone">
+                </div>
+                <div class="text-container">
+                    <h2>Bem-vindo ao meu Portfólio</h2>
+                    <p>Sou Nina Maciel Brisolla, tradutora especializada em tradução científica. Com uma sólida formação acadêmica em Engenharia Florestal pela Universidade de Brasília (UnB) e uma grande paixão pela ciência, dedico-me a oferecer traduções precisas e de alta qualidade para pesquisadores, universitários, mestrandos, doutorandos e profissionais da área acadêmica.</p>
+                </div>
+            </div>
+            <div class="content-container">
+                <div class="text-container">
+                    <h3 class="services-title">Serviços Oferecidos:</h3>
+                    <ul>
+                        <li>Tradução de artigos científicos</li>
+                        <li>Tradução de teses e dissertações</li>
+                        <li>Tradução de projetos de pesquisa</li>
+                        <li>Revisão e formatação de textos acadêmicos</li>
+                        <li>Serviços de legendagem</li>
+                        <li>Serviços gerais de tradução</li>
+                    </ul>
+                </div>
+                <div class="image-container right">
+                    <img src="C:\site portfolio\site portfolio\images\foto 2.png" alt="Trabalho em campo">
+                </div>
+            </div>
+            <div class="content-container">
+                <div class="image-container left">
+                    <img src="C:\site portfolio\site portfolio\images\foto 3.png" alt="Apresentação em Congresso">
+                </div>
+                <div class="text-container">
+                    <p>Minha experiência abrange diversas áreas do conhecimento, sempre com o compromisso de manter a precisão terminológica e o rigor técnico necessário para publicações científicas. Seja para publicar em revistas internacionais ou preparar documentos para defesas acadêmicas, estou aqui para ajudar a levar sua pesquisa ao próximo nível.</p>
+                </div>
+            </div>
+            <div class="content-container">
+                <div class="text-container">
+                    <p>Explore meu portfólio para ver exemplos de trabalhos realizados e saiba mais sobre como posso contribuir para o sucesso de suas publicações científicas.</p>
+                    <p><strong>Entre em contato</strong> para discutir seu projeto e obter um orçamento personalizado. Estou ansiosa para colaborar com você na realização de suas metas acadêmicas.</p>
+                </div>
+                <div class="image-container right">
+                    <img src="C:\site portfolio\site portfolio\images\foto 4.png" alt="Montando hardware para pesquisa científica com retardantes de chamas.">
+                </div>
+            </div>
+        </section>
+
+        <section id="en" class="content hidden">
+            <div class="content-container">
+                <div class="image-container left">
+                    <img src="C:\site portfolio\site portfolio\images\photo 1.png" alt="Field work with drone">
+                </div>
+                <div class="text-container">
+                    <h2>Welcome to my Portfolio</h2>
+                    <p>I am Nina Maciel Brisolla, a translator specializing in scientific translation. With a robust academic background in Forestry Engineering from the University of Brasília (UnB), a great passion for science and dedication to excellence, I am dedicated to offering precise and high-quality translations for researchers, university students, master's and doctoral candidates, professionals in the academic field and companies looking to bridge language gaps in their business operations.</p>
+                </div>
+            </div>
+            <div class="content-container">
+                <div class="text-container">
+                    <h3 class="services-title">Services Offered:</h3>
+                    <ul>
+                        <li>Translation of scientific articles</li>
+                        <li>Translation of theses and dissertations</li>
+                        <li>Translation of research projects</li>
+                        <li>Review and formatting of academic texts</li>
+                        <li>Subtitling services for the Brazilian audience</li>
+                        <li>General translation services</li>
+                    </ul>
+                </div>
+                <div class="image-container right">
+                    <img src="C:\site portfolio\site portfolio\images\photo 2.png" alt="Field work">
+                </div>
+            </div>
+            <div class="content-container">
+                <div class="image-container left">
+                    <img src="C:\site portfolio\site portfolio\images\photo 3.png" alt="Congress Presentation">
+                </div>
+                <div class="text-container">
+                    <p>My experience covers various fields of knowledge, always committed to maintaining terminological precision and the technical rigor necessary for scientific publications. Whether you are looking to publish in international journals or prepare documents for academic defenses, I am here to help take your research to the next level.</p>
+                </div>
+            </div>
+            <div class="content-container">
+                <div class="text-container">
+                    <p>Browse through my portfolio to see examples of completed projects and learn more about how my services can benefit your business operations.</p>
+                    <p><strong>Contact me</strong> to discuss your project and receive a personalized quote. I look forward to partnering with you to achieve your business objectives.</p>
+                </div>
+                <div class="image-container right">
+                    <img src="C:\site portfolio\site portfolio\images\photo 4.png" alt="setting up hardware for academic research with fire retardants.">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Nina Maciel Brisolla</p>
+    </footer>
+</body>
+</html>

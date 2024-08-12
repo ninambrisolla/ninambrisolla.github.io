@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapas - Geoprocessamento</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function switchLanguage(language) {
+            document.querySelectorAll('.content').forEach(element => {
+                element.classList.add('hidden');
+                element.classList.remove('active');
+            });
+            document.querySelectorAll('.nav-item').forEach(element => {
+                element.style.display = 'none';
+            });
+            document.querySelectorAll('.nav-item-' + language).forEach(element => {
+                element.style.display = 'inline';
+            });
+            document.getElementById(language).classList.add('active');
+            document.getElementById(language).classList.remove('hidden');
+    
+            if (language === 'pt') {
+                document.querySelector('.subtitle').textContent = 'Geoprocessamento';
+            } else if (language === 'en') {
+                document.querySelector('.subtitle').textContent = 'GIS';
+            }
+        }
+    
+        window.onload = function() {
+            switchLanguage('pt');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-item nav-item-pt"><a href="index.html">Home</a></li>
+                <li class="nav-item nav-item-pt"><a href="portfolio.html">Portfólio</a></li>
+                <li class="nav-item nav-item-pt"><a href="contacts.html">Contato</a></li>
+                <li class="nav-item nav-item-pt"><a href="about.html">Sobre Mim</a></li>
+
+                <li class="nav-item nav-item-en" style="display: none;"><a href="index.html">Home</a></li>
+                <li class="nav-item nav-item-en" style="display: none;"><a href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item nav-item-en" style="display: none;"><a href="contacts.html">Contact</a></li>
+                <li class="nav-item nav-item-en" style="display: none;"><a href="about.html">About Me</a></li>
+            </ul>
+        </nav>        
+        <div class="title">
+            <h1 class="portfolio-title">Nina Maciel Brisolla</h1>
+            <h2 class="subtitle">Geoprocessamento</h2>
+        </div>
+        <div class="language-switch">
+            <button onclick="switchLanguage('pt')">PT</button>
+            <button onclick="switchLanguage('en')">EN</button>
+        </div>
+    </header>
+    <main class="portfolio">
+        <section id="pt" class="content active">
+            <h2 class="portfolio-title">Mapas</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <a href="mapa1.html" target="_blank"><img src="C:\site portfolio\site portfolio\images\MAPA1.jpg" alt="Mapa 1: Área de Estudo"></a>
+                    <p><strong>Mapa 1</strong></p>
+                    <p>APA-NRV - Mapa da Área de Estudo do Experimento sobre o efeito da restauração de pastagens na perda de água e de solo na APA das Nascentes do Rio Vermelho (GO)</p>
+                </div>
+                <div class="gallery-item">
+                    <a href="mapa2.html" target="_blank"><img src="C:\site portfolio\site portfolio\images\Fazenda Tarimba.jpg" alt="Mapa 2: Fazenda Tarimba"></a>
+                    <p><strong>Mapa 2</strong></p>
+                    <p>Fazenda Tarimba - Mapa do Experimento sobre o efeito da restauração de pastagens na perda de água e de solo na APA das Nascentes do Rio Vermelho (GO)</p>
+                </div>
+                <div class="gallery-item">
+                    <a href="mapa3.html" target="_blank"><img src="C:\site portfolio\site portfolio\images\Fazenda Funil.jpg" alt="Mapa 3: Fazenda Funil"></a>
+                    <p><strong>Mapa 3</strong></p>
+                    <p>Fazenda Funil - Mapa do Experimento sobre o efeito da restauração de pastagens na perda de água e de solo na APA das Nascentes do Rio Vermelho (GO)</p>
+                </div>
+                <div class="gallery-item">
+                    <a href="mapa4.html" target="_blank"><img src="C:\site portfolio\site portfolio\images\Fazenda Progresso.jpg" alt="Mapa 4: Fazenda Progresso"></a>
+                    <p><strong>Mapa 4</strong></p>
+                    <p>Fazenda Progresso - Mapa do Experimento sobre o efeito da restauração de pastagens na perda de água e de solo na APA das Nascentes do Rio Vermelho (GO)</p>
+                </div>
+                <!-- Adicione mais itens conforme necessário -->
+            </div>
+        </section>
+        <section id="en" class="content hidden">
+            <h2 class="portfolio-title">Maps</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <a href="mapa1.html" target="_blank"><img src="C:\site portfolio\site portfolio\images\MAPA1.jpg" alt="Map 1: Study Area"></a>
+                    <p><strong>Map n°1</strong></p>
+                    <p>APA-NRV - Map of the Study Area for the Experimental Study on the Effect of Pasture Restoration on Water and Soil Loss in the APA Nascentes do Rio Vermelho (GO)</p>
+                </div>
+                <div class="gallery-item">
+                    <a href="mapa2.html" target="_blank"><img src="C:\site portfolio\site portfolio\images\Fazenda Tarimba.jpg" alt="Map 2: Tarimba Farm"></a>
+                    <p><strong>Map n°2</strong></p>
+                    <p>Tarimba Farm - Map for the Experimental Study on the Effect of Pasture Restoration on Water and Soil Loss in the APA Nascentes do Rio Vermelho (GO)</p>
+                </div>
+                <div class="gallery-item">
+                    <a href="mapa3.html" target="_blank"><img src="C:\site portfolio\site portfolio\images\Fazenda Funil.jpg" alt="Map 3: Funil Farm"></a>
+                    <p><strong>Map n°3</strong></p>
+                    <p>Funil Farm - Map for the Experimental Study on the Effect of Pasture Restoration on Water and Soil Loss in the APA Nascentes do Rio Vermelho (GO)</p>
+                </div>
+                <div class="gallery-item">
+                    <a href="mapa4.html" target="_blank"><img src="C:\site portfolio\site portfolio\images\Fazenda Progresso.jpg" alt="Map 4: Progresso Farm"></a>
+                    <p><strong>Map n°4</strong></p>
+                    <p>MAP n°4 - Progresso Farm - Map for the Experimental Study on the Effect of Pasture Restoration on Water and Soil Loss in the APA Nascentes do Rio Vermelho (GO)</p>
+                <!-- Adicione mais itens conforme necessário -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Nina Maciel Brisolla</p>
+    </footer>
+</body>
+</html>
