@@ -13,7 +13,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("C:\site portfolio\site portfolio\images\background.webp") no-repeat center center fixed; /* Imagem de fundo */
+    background: url(images/background.webp") no-repeat center center fixed; /* Imagem de fundo */
     background-size: cover;
     background-color: rgba(255, 255, 255, 0.9);
     z-index: 0;
@@ -21,7 +21,7 @@ body::before {
 
 header {
     position: relative;
-    background-image: url("C:\site portfolio\site portfolio\images\header.jpg"); /* Imagem de fundo */
+    background-image: url(images/header.jpg"); /* Imagem de fundo */
     background-size: cover;
     background-position: center;
     color: #333;
@@ -227,7 +227,7 @@ section {
     header {
         flex-direction: column;
         align-items: center;
-        background-image: url("C:\site portfolio\site portfolio\images\header.jpg"); /* Imagem de fundo para telas móveis */
+        background-image: url("images/header.jpg"); /* Imagem de fundo para telas móveis */
     }
 
     header .title {
@@ -262,7 +262,7 @@ section {
 
 @media only screen and (min-width: 1200px) {
     header {
-        background-image: url("C:\site portfolio\site portfolio\images\header.jpg"); /* Imagem de fundo para telas grandes */
+        background-image: url("images/header.jpg"); /* Imagem de fundo para telas grandes */
     }
 
     main .home .text-container {
