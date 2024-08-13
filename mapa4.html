@@ -3,48 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Tradução Científica</title>
+    <title>Mapa 4 . Fazenda Progresso - Geoprocessamento</title>
     <link rel="stylesheet" href="styles.css">
-
-    <script>
-        function switchLanguage(language) {
-            document.querySelectorAll('.content').forEach(element => {
-                element.classList.add('hidden');
-                element.classList.remove('active');
-            });
-            document.querySelectorAll('.nav-item').forEach(element => {
-                element.style.display = 'none';
-            });
-            document.querySelectorAll('.nav-item-' + language).forEach(element => {
-                element.style.display = 'inline';
-            });
-            document.getElementById(language).classList.add('active');
-            document.getElementById(language).classList.remove('hidden');
-    
-            if (language === 'pt') {
-                document.querySelector('.subtitle').textContent = 'Tradução Científica';
-            } else if (language === 'en') {
-                document.querySelector('.subtitle').textContent = 'Scientific Translation';
-            }
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Evita rolagem horizontal */
         }
-    
-        window.onload = function() {
-            switchLanguage('pt');
+        .map-container {
+            text-align: center;
+            margin: 0 auto;
         }
-    </script>
+        .map-container img {
+            width: 50%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .map-caption {
+            text-align: left;
+            font-size: 1rem;
+            margin-top: 10px;
+            margin-left: 25%;
+            width: 50%;
+        }
+    </style>
 </head>
-    
 <body>
     <header>
         <nav>
             <ul>
                 <li class="nav-item nav-item-pt"><a href="index.html">Home</a></li>
-                <li class="nav-item nav-item-pt"><a href="about.html">Sobre Mim</a></li>
+                <li class="nav-item nav-item-pt"><a href="portfolio.html">Portfólio</a></li>
                 <li class="nav-item nav-item-pt"><a href="contacts.html">Contato</a></li>
-        
+                <li class="nav-item nav-item-pt"><a href="about.html">Sobre Mim</a></li>
+
                 <li class="nav-item nav-item-en" style="display: none;"><a href="index.html">Home</a></li>
-                <li class="nav-item nav-item-en" style="display: none;"><a href="about.html">About Me</a></li>
+                <li class="nav-item nav-item-en" style="display: none;"><a href="portfolio.html">Portfolio</a></li>
                 <li class="nav-item nav-item-en" style="display: none;"><a href="contacts.html">Contact</a></li>
+                <li class="nav-item nav-item-en" style="display: none;"><a href="about.html">About Me</a></li>
             </ul>
         </nav>        
         <div class="title">
@@ -56,28 +54,49 @@
             <button onclick="switchLanguage('en')">EN</button>
         </div>
     </header>
-    <main class="portfolio">
+    <main class="document">
         <section id="pt" class="content active">
-            <h2 class="portfolio-title">Portfólio</h2>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <a href="geoprocessamento.html"><img src="C:\site portfolio\site portfolio\images\SIG.webp" alt="Mapa 1"></a>
-                    <p>Geoprocessamento</p>
-                </div>
+            <div class="map-container">
+                <img src="images\Fazenda Progresso.jpg" alt="Mapa 4: Fazenda Progresso">
+                <h2 class="map-caption">Fazenda Progresso - Mapa do Experimento sobre o efeito da restauração de pastagens na perda de água e de solo na APA das Nascentes do Rio Vermelho (GO)</h2>
             </div>
         </section>
         <section id="en" class="content hidden">
-            <h2 class="portfolio-title">Portfolio</h2>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <a href="geoprocessamento.html"><img src="C:\site portfolio\site portfolio\images\GIS.webp" alt="Mapa 2"></a>
-                    <p>GIS</p>
-                </div>
+            <div class="map-container">
+                <img src="images\Fazenda Progresso.jpg" alt="Map 4: Progresso Farm">
+                <h2 class="map-caption">Progresso Farm - Map for the Experimental Study on the Effect of Pasture Restoration on Water and Soil Loss in the APA Nascentes do Rio Vermelho (GO)</h2>
             </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Nina Maciel Brisolla</p>
     </footer>
+    <script>
+        function switchLanguage(language) {
+            document.querySelectorAll('.content').forEach(element => {
+                element.classList.add('hidden');
+                element.classList.remove('active');
+            });
+            document.getElementById(language).classList.add('active');
+            document.getElementById(language).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-item').forEach(element => {
+                element.style.display = 'none';
+            });
+            document.querySelectorAll('.nav-item-' + language).forEach(element => {
+                element.style.display = 'inline';
+            });
+
+            if (language === 'pt') {
+                document.querySelector('.subtitle').textContent = 'Geoprocessamento';
+            } else if (language === 'en') {
+                document.querySelector('.subtitle').textContent = 'GIS';
+            }
+        }
+
+        window.onload = function() {
+            switchLanguage('pt');
+        }
+    </script>
 </body>
 </html>
