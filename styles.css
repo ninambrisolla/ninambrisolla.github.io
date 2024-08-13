@@ -147,7 +147,7 @@ main h2 {
     border-radius: 8px;
     margin: 0 auto;
     max-width: 80%;
-    text-align: left;
+    text-align: justify;
 }
 
 .gallery {
