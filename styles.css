@@ -1,9 +1,13 @@
 body {
-    font-family: 'Times New Roman', Times, serif; /* Fonte profissional */
+    font-family: 'Times New Roman', Times, serif;
     color: #333;
     margin: 0;
     padding: 0;
     position: relative;
+    min-height: 100vh; /* Garante que o corpo ocupe a altura total da janela */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo da largura/altura */
+    background: url("images/background.webp") no-repeat center center fixed; /* Imagem de fundo */
+    background-size: cover;
 }
 
 body::before {
@@ -13,15 +17,19 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(images/background.webp") no-repeat center center fixed; /* Imagem de fundo */
-    background-size: cover;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.7); /* Transparência sobre a imagem de fundo */
     z-index: 0;
+    pointer-events: none; /* Garante que o conteúdo seja interativo */
+}
+
+header, main, footer {
+    position: relative;
+    z-index: 1; /* Garante que o conteúdo fique acima da transparência */
 }
 
 header {
     position: relative;
-    background-image: url(images/header.jpg"); /* Imagem de fundo */
+    background-image: url("images/header.jpg");
     background-size: cover;
     background-position: center;
     color: #333;
@@ -60,12 +68,12 @@ header .title {
 
 header .title h1 {
     margin: 0;
-    font-size: 2rem; /* Aumentar o tamanho do nome */
+    font-size: 2rem;
 }
 
 header .title h2 {
     margin: 0;
-    font-size: 1.5rem; /* Aumentar o tamanho do nome */
+    font-size: 1.5rem;
 }
 
 header nav {
@@ -102,15 +110,15 @@ header .language-switch {
 
 .language-switch button {
     background: none;
-    border: 2px solid #333; /* Adicionar linhas ao redor dos botões */
+    border: 2px solid #333;
     color: #333;
     font-weight: bold;
     font-size: 1rem;
     cursor: pointer;
     margin: 0 5px;
-    padding: 0.5rem; /* Adicionar padding para os botões */
-    border-radius: 50%; /* Deixar os botões redondos */
-    width: 40px; /* Definir largura e altura dos botões para deixá-los redondos */
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -124,14 +132,14 @@ header .language-switch {
 
 main {
     padding: 1.5rem;
-    min-height: calc(100vh - 100px); /* Ajusta para ocupar o espaço total */
+    margin-bottom: 50px; /* Adiciona margem inferior para garantir que o footer não sobreponha o conteúdo */
     position: relative;
-    z-index: 1; /* Garante que o conteúdo principal fique acima do fundo */
+    z-index: 1;
 }
 
 main h2 {
     color: #333;
-    text-align: center; /* Centralizar o título */
+    text-align: center;
 }
 
 .text-container {
@@ -139,23 +147,23 @@ main h2 {
     border-radius: 8px;
     margin: 0 auto;
     max-width: 80%;
-    text-align: left; /* Alinhar o texto à esquerda */
+    text-align: left;
 }
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centraliza os itens da galeria */
-    gap: 20px; /* Adiciona espaçamento entre os itens */
+    justify-content: center;
+    gap: 20px;
 }
 
 .gallery-item {
-    background-color: rgba(251, 250, 249, 0.8); /* Bege claro com alta transparência */
+    background-color: transparent;
     padding: 1rem;
     border-radius: 8px;
     text-align: center;
     margin: 10px;
-    flex: 0 1 30%; /* Permite que os itens ocupem até 30% da largura disponível */
+    flex: 0 1 30%;
 }
 
 .gallery img {
@@ -173,19 +181,23 @@ main h2 {
 .gallery-item p {
     margin-top: 0.5rem;
     font-size: 1rem;
-    color:#333;
+    color: #333;
 }
 
 footer {
+    clear: both;
     text-align: center;
-    padding: 0.5rem 0; /* Diminuir o tamanho do padding */
-    background-color: rgba(251, 250, 249, 0.8); /* Bege com transparência */
+    padding: 0.5rem 0;
+    background-color: rgba(251, 250, 249, 0.8);
     color: #333;
     position: relative;
     bottom: 0;
     width: 100%;
+    z-index: 1;
+    margin-top: 20px;
 }
 
+/* Estilo para formulários */
 form label {
     display: block;
     margin-top: 1rem;
@@ -211,6 +223,7 @@ form button:hover {
     background-color: #1e4e1e;
 }
 
+/* Animação de fade-in */
 section {
     animation: fadeIn 1s ease-in-out;
 }
@@ -220,18 +233,20 @@ section {
     to { opacity: 1; }
 }
 
+/* Classes para alternância de idioma */
 .hidden { display: none; }
 .active { display: block; }
 
+/* Estilos responsivos */
 @media only screen and (max-width: 800px) {
     header {
         flex-direction: column;
         align-items: center;
-        background-image: url("images/header.jpg"); /* Imagem de fundo para telas móveis */
+        background-image: url("images/header.jpg");
     }
 
     header .title {
-        order: 1; /* Nome e subtítulo no topo */
+        order: 1;
         left: 6rem;
     }
 
@@ -242,12 +257,12 @@ section {
     }
 
     header nav ul {
-        flex-direction: row; /* Manter o menu em uma linha */
+        flex-direction: row;
         justify-content: center;
     }
 
     header .language-switch {
-        order: 3; /* Botões de idioma no final */
+        order: 3;
         position: absolute;
         right: 0.3rem;
         top: 3.6rem;
@@ -256,18 +271,22 @@ section {
     main .home .text-container {
         width: 100%;
         text-align: center;
-        background-color: rgba(251, 250, 249, 0.8); /* Ajuste para fundo com transparência */
+        background-color: rgba(251, 250, 249, 0.8);
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    header {
-        background-image: url("images/header.jpg"); /* Imagem de fundo para telas grandes */
+    .content-container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
     }
 
-    main .home .text-container {
-        width: 50%;
-        text-align: left;
-        float: left; /* Alinha à esquerda */
+    .text-container {
+        max-width: 60%;
+    }
+
+    .image-container {
+        max-width: 35%;
     }
 }
